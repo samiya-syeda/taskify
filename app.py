@@ -1,5 +1,4 @@
-from flask import send_from_directory
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sqlite3
 import os
@@ -100,14 +99,6 @@ def init_db():
     conn.commit()
     conn.close()
 
-
-@app.route("/")
-def home():
-    return render_template("index.html")
-
-@app.route("/login")
-def login_page():
-    return render_template("login.html")
 # ─── AUTH ─────────────────────────────────────────────────────────────────────
 
 @app.route('/api/auth/signup', methods=['POST'])
