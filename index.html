@@ -875,7 +875,7 @@ function esc(s) { if (!s) return ''; return String(s).replace(/&/g,'&amp;').repl
 function toast(msg, type='info') {
   const c = document.getElementById('toast-container'), t = document.createElement('div');
   t.className = `toast toast-${type}`;
-  t.innerHTML = `<span>${icons[type]}</span><span>${msg}</span>`;
+  t.innerHTML = `<span>${{success:'✅',error:'❌',info:'ℹ️'}[type]}</span><span>${msg}</span>`;
   c.appendChild(t); setTimeout(() => t.remove(), 3000);
 }
 
